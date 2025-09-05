@@ -22,7 +22,7 @@ const PROFILE = {
 // ---------- PROJECTS ----------
 const PROJECTS = [
   {
-    title: "WCB2 ",
+    title: "WCB2",
     year: 2023,
     blurb:	
 	"Step into the world of World Cricket Battle 2 (WCB2), the most advanced next-gen 3D cricket game on Google Play Store, delivering an unmatched real cricket simulation experience. Perfect for all cricket enthusiasts, WCB2 offers a wide array of World Cricket Championships, including the most authentic My Career Mode, thrilling T20 Cricket Leagues, and intense Real-Time Cricket Batting Multiplayer!",
@@ -30,6 +30,7 @@ const PROJECTS = [
     tech: ["Unity", "C#", "Photon", "PUN 2", "Node.js"],
     media: "https://play-lh.googleusercontent.com/ZJLlYWTMm5EZl0-fzbwXyp2fgtynC2T47WNdbC_1LMncZh0e_SjRlg_pOOKaCO5dYw=w526-h296-rw",
     tags: ["Multiplayer", "Sports", "Mobile", "Android", "iOS",  "Sports", "Game"],
+	link: "https://play.google.com/store/apps/details?id=com.creativemonkeygames.worldcricketbattle&hl=en_IN",
   },
   {
     title: "Haydos 380",
@@ -40,6 +41,7 @@ const PROJECTS = [
     tech: ["Unity", "C#", "Photon", "PUN 2", "Node.js" ],
     media: "https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/a7802075-54c9-476f-be3c-59262edc2c57/3124170776/haydos-380-screenshot",
     tags: ["Multiplayer", "Sports", "Mobile", "Android", "Sports", "Game"],
+	link: "https://www.youtube.com/watch?v=hUrpYbnqq4Q",
   },
    {
     title: "Cricket Gangsta",
@@ -50,6 +52,7 @@ const PROJECTS = [
     tech: ["Unity", "C#", "Photon", "PUN 2", "Node.js"],
     media: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyfpfWqQjFms1axPqUoU5finT7E7PMiAD6pZX6WFmYN65KC1CEYxpPgUgjfJXbatmv1ZI&usqp=CAU",
     tags: ["Multiplayer", "Sports", "Mobile", "Android", "iOS","Sports", "Game"],
+	link: "https://play.google.com/store/apps/details?id=com.creativemonkeygames.wcbt20cricketpremierleague&hl=en_IN",
   },
   {
     title: "Digital Twin",
@@ -60,6 +63,8 @@ const PROJECTS = [
     tech: ["Unity", "VR", "MQTT"],
     media: "https://www.ltts.com/sites/default/files/inline-images/Marelli.png",
     tags: ["VR", "Windows","App", "Digital Twin", "Meta Quest", "Automotive"],
+	link: "https://www.ltts.com/press-release/LTTS-supports-Marelli-revolutionizing-automotive-infotainment",
+
   },
   {
     title: "Ludo Habibi",
@@ -70,6 +75,8 @@ const PROJECTS = [
     tech: ["Unity", "C#", "Pun 2"],
     media: "https://play-lh.googleusercontent.com/e7_Qm1KVu0wOKi8hH-49V71rHArWtli1scDxDzqQvq-2CrV88pTaEE4xmJokSQ0gdA=w1052-h592",
     tags: ["Multiplayer", "Mobile", "Android", "Board Game"],
+	link: "https://play.google.com/store/apps/details?id=com.staryalla.ludo.habibi&hl=en_IN",
+
   },
    {
     title: "Skill Premier League (SPL)",
@@ -80,6 +87,7 @@ const PROJECTS = [
     tech: ["Unity", "C#", "Pun 2", "BestHTTP", "Socket.iO"],
     media: "https://scontent.fmaa3-3.fna.fbcdn.net/v/t1.6435-9/68288304_111832240165563_7358938952843132928_n.png?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=FDDlhmItF0UQ7kNvwGjBBa0&_nc_oc=AdmfbuL8BvzKW94iVjAN13P9xnpjWOTv6YoSnvoj_XnPzwyS4uKwUHqCagHy5E5JP_7gbnTweANRWdmIQh_POvn1&_nc_zt=23&_nc_ht=scontent.fmaa3-3.fna&_nc_gid=xzamj3LlQuNouKfRdUfl4g&oh=00_AfYkHcWtHkd99iABavUlvXzLKKECh1yggkojzPkQ11AT-w&oe=68E1ECA0",
     tags: ["Multiplayer", "Mobile", "Android", "iOS", "Real Money"],
+	link: "https://www.facebook.com/PlaySPLOfficial/",
   },
    {
     title: "Street Chaser",
@@ -90,6 +98,7 @@ const PROJECTS = [
     tech: ["Unity", "C#", "Pun 2"],
     media: "https://play-lh.googleusercontent.com/BFyWSNUxrWOZ8yNnWiuoQNjF8-jYrFVzYKkLAusvB0qwW5Np9lspRLA3de38fnPC2jo",
     tags: ["Multiplayer", "Mobile", "Android", "iOS"],
+	link: "https://play.google.com/store/apps/details?id=com.igoldtech.streetchaser&hl=en_IN",
   },
    {
     title: "Unblock Ball",
@@ -100,6 +109,7 @@ const PROJECTS = [
     tech: ["Unity", "C#", "Pun 2"],
     media: "https://play-lh.googleusercontent.com/6hcnH6Gi3ZlKMJUxxqy-0jXO9Ah3zBNFT2hw7ye7w4JtvLL3R9Ugwmi4bznFYc68CmA=w526-h296-rw",
     tags: ["Mobile", "Android", "iOS"],
+	link: "https://play.google.com/store/apps/details?id=roll.unblock.ball.block.puzzle&hl=en_IN",
   },
   {
     title: "HMI - SmartCockpit",
@@ -110,6 +120,8 @@ const PROJECTS = [
     tech: ["Unity", "C#", "AR"],
     media: "https://moparinsiders.com/wp-content/uploads/2023/09/Over-The-Air-OTA-Updates-and-WiFi-with-the-Uconnect-5-system.-Stellantis.-1-780x470.jpeg",
     tags: ["HMI", "Automotive", "AR"],
+	link: "https://www.stellantis.com/en/innovation/intelligent-vehicles-software",
+
   },
 ];
 
@@ -205,7 +217,9 @@ function ProjectCard({ p }) {
       whileHover={{ scale: 1.03 }}
     >
       <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg overflow-hidden hover:shadow-xl hover:border-white/50 transition">
-        {p.media && <img src={p.media} alt={p.title} className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500" />}
+        <a href={p.link} target="_blank">
+		{p.media && <img src={p.media} alt={p.title} className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"/>}
+		</a>
         <div className="p-4 text-white">
           <div className="flex justify-between items-center">
             <h3 className="text-lg font-semibold drop-shadow">{p.title}</h3>
