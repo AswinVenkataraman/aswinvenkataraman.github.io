@@ -137,7 +137,7 @@ const EXPERIENCE = [
   {
     role: "Technology Lead",
     company: "L&T Technology Services",
-    period: "Oct 2023 – Jul 2025",
+    period: "Oct 2023 – Aug 2025",
     points: [
 		"Worked on various HMI related projects including creating fully functional vehicle infotainment system from scratch for production vehicles for a popular automotive company.",
 		"Created a cutting-edge Digital Twin VR Cockpit concept and showcased it at CES 2024/2025",
