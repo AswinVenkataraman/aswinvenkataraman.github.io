@@ -1,11 +1,11 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Link as LinkIcon, Download, Gamepad2, Filter, Sparkles, Phone, MapPin } from "lucide-react";
+import { Download, Gamepad2 } from "lucide-react";
 
 // ---------- PROFILE ----------
 const PROFILE = {
   name: "Aswin Venkataraman",
-  title: "Unity Developer \n | AR/VR | HMI | Digital Twin",
+  title: "Unity Developer | AR/VR | HMI | Digital Twin",
   tagline:
     "Dynamic software professional with 8+ years of experience in Game, AR/VR, HMI, and Digital Twin development.",
   location: "Chennai, India",
@@ -99,7 +99,7 @@ const PROJECTS = [
     role: "VR Systems, HMI Integration, Leadership",
     tech: ["Unity", "C#", "Pun 2"],
     media: "https://play-lh.googleusercontent.com/6hcnH6Gi3ZlKMJUxxqy-0jXO9Ah3zBNFT2hw7ye7w4JtvLL3R9Ugwmi4bznFYc68CmA=w526-h296-rw",
-    tags: ["Multiplayer", "Mobile", "Android", "iOS"],
+    tags: ["Mobile", "Android", "iOS"],
   },
   {
     title: "HMI - SmartCockpit",
@@ -183,28 +183,35 @@ const TAGS = ["All", "AR", "VR", "Multiplayer", "Mobile", "Automotive"];
 // ---------- UI Components ----------
 function SectionTitle({ children }) {
   return (
-    <h2 className="text-2xl font-semibold text-white drop-shadow mb-6">
+    <motion.h2
+      initial={{ opacity: 0, y: -10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="text-2xl font-semibold text-white drop-shadow mb-6"
+    >
       {children}
-    </h2>
+    </motion.h2>
   );
 }
 
 function ProjectCard({ p }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
+      whileHover={{ scale: 1.03 }}
     >
-      <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg overflow-hidden">
-        {p.media && <img src={p.media} alt={p.title} className="w-full h-48 object-cover" />}
+      <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg overflow-hidden hover:shadow-xl hover:border-white/50 transition">
+        {p.media && <img src={p.media} alt={p.title} className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500" />}
         <div className="p-4 text-white">
           <div className="flex justify-between items-center">
             <h3 className="text-lg font-semibold drop-shadow">{p.title}</h3>
             <span className="text-xs bg-white/30 px-2 py-1 rounded-full">{p.year}</span>
           </div>
-          <p className="text-sm text-white/80 mt-1">{p.blurb}</p>
+          <p className="text-sm text-white/80 mt-1 line-clamp-3">{p.blurb}</p>
           <div className="flex flex-wrap gap-2 mt-2">
             {(p.tech || []).map((t) => (
               <span key={t} className="text-xs bg-white/20 px-2 py-1 rounded-full border border-white/40">
@@ -220,11 +227,11 @@ function ProjectCard({ p }) {
 
 function SkillsList() {
   return (
-    <div className="grid md:grid-cols-3 gap-4">
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="grid md:grid-cols-3 gap-4">
       {Object.entries(SKILLS).map(([group, items]) => (
         <div
           key={group}
-          className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg p-4 text-white"
+          className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg p-4 text-white hover:bg-white/30 transition"
         >
           <h3 className="font-semibold mb-2 drop-shadow">{group}</h3>
           <div className="flex flex-wrap gap-2">
@@ -236,17 +243,21 @@ function SkillsList() {
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
 function ExperienceList() {
   return (
     <div className="grid gap-4">
-      {EXPERIENCE.map((e) => (
-        <div
+      {EXPERIENCE.map((e, i) => (
+        <motion.div
           key={`${e.role}-${e.company}`}
-          className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg p-4 text-white"
+          initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg p-4 text-white hover:bg-white/30 transition"
         >
           <div className="flex items-center justify-between">
             <h3 className="font-semibold drop-shadow">{e.role} · {e.company}</h3>
@@ -257,7 +268,7 @@ function ExperienceList() {
               <li key={p}>{p}</li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
@@ -266,6 +277,15 @@ function ExperienceList() {
 export default function Portfolio() {
   const [q, setQ] = useState("");
   const [activeTag, setActiveTag] = useState("All");
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   const filtered = useMemo(() => {
     const text = q.trim().toLowerCase();
@@ -279,10 +299,33 @@ export default function Portfolio() {
     });
   }, [q, activeTag]);
 
+  const blobStyle = (offsetX, offsetY) => ({
+    transform: `translate(${mousePos.x * offsetX}px, ${mousePos.y * offsetY}px) scale(1.2)`
+  });
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white">
+    <div className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white overflow-hidden">
+      {/* Animated Blobs with Strong Parallax */}
+      <div
+        className="absolute -z-10 top-0 left-0 w-[30rem] h-[30rem] bg-pink-500/40 rounded-full blur-3xl animate-blob"
+        style={blobStyle(0.01, 0.01)}
+      ></div>
+      <div
+        className="absolute -z-10 top-40 right-0 w-[30rem] h-[30rem] bg-purple-500/40 rounded-full blur-3xl animate-blob animation-delay-2000"
+        style={blobStyle(-0.008, 0.01)}
+      ></div>
+      <div
+        className="absolute -z-10 bottom-0 left-1/2 w-[30rem] h-[30rem] bg-indigo-500/40 rounded-full blur-3xl animate-blob animation-delay-4000"
+        style={blobStyle(0.008, -0.008)}
+      ></div>
+
       {/* NAVBAR */}
-      <nav className="sticky top-0 z-20 backdrop-blur bg-white/10 border-b border-white/20">
+      <motion.nav
+        initial={{ y: -60 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="sticky top-0 z-20 backdrop-blur bg-white/10 border-b border-white/20"
+      >
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Gamepad2 className="h-5 w-5" />
@@ -298,12 +341,12 @@ export default function Portfolio() {
             href={PROFILE.links.resume}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-sm border border-white/30 hover:bg-white/30"
+            className="flex items-center bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-sm border border-white/30 hover:bg-white/30 transition"
           >
             <Download className="h-4 w-4 mr-1" /> Resume
           </a>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* HERO */}
       <header className="max-w-6xl mx-auto px-4 py-16 text-center">
@@ -315,14 +358,24 @@ export default function Portfolio() {
         >
           {PROFILE.title}
         </motion.h1>
-        <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto drop-shadow">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="mt-4 text-lg text-white/80 max-w-2xl mx-auto drop-shadow"
+        >
           {PROFILE.tagline}
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <a href={PROFILE.links.github} target="_blank" rel="noreferrer" className="px-3 py-1 rounded-full bg-white/20 border border-white/30 hover:bg-white/30">GitHub</a>
-          <a href={PROFILE.links.linkedin} target="_blank" rel="noreferrer" className="px-3 py-1 rounded-full bg-white/20 border border-white/30 hover:bg-white/30">LinkedIn</a>
-          <a href={PROFILE.links.itch} target="_blank" rel="noreferrer" className="px-3 py-1 rounded-full bg-white/20 border border-white/30 hover:bg-white/30">itch.io</a>
-        </div>
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-6 flex flex-wrap justify-center gap-3"
+        >
+          <a href={PROFILE.links.github} target="_blank" rel="noreferrer" className="px-3 py-1 rounded-full bg-white/20 border border-white/30 hover:bg-white/30 transition">GitHub</a>
+          <a href={PROFILE.links.linkedin} target="_blank" rel="noreferrer" className="px-3 py-1 rounded-full bg-white/20 border border-white/30 hover:bg-white/30 transition">LinkedIn</a>
+          <a href={PROFILE.links.itch} target="_blank" rel="noreferrer" className="px-3 py-1 rounded-full bg-white/20 border border-white/30 hover:bg-white/30 transition">itch.io</a>
+        </motion.div>
       </header>
 
       {/* PROJECTS */}
@@ -334,7 +387,7 @@ export default function Portfolio() {
               <button
                 key={t}
                 onClick={() => setActiveTag(t)}
-                className={`px-3 py-1 rounded-full text-sm border border-white/30 backdrop-blur-lg ${activeTag === t ? 'bg-white/40' : 'bg-white/20'} hover:bg-white/30`}
+                className={`px-3 py-1 rounded-full text-sm border border-white/30 backdrop-blur-lg ${activeTag === t ? 'bg-white/40' : 'bg-white/20'} hover:bg-white/30 transition`}
               >
                 {t}
               </button>
@@ -345,7 +398,7 @@ export default function Portfolio() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Search projects, tech, tags…"
-              className="border border-white/30 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full w-full md:w-72 text-white placeholder-white/70"
+              className="border border-white/30 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full w-full md:w-72 text-white placeholder-white/70 focus:ring-2 focus:ring-pink-300 transition"
             />
           </div>
         </div>
@@ -375,15 +428,21 @@ export default function Portfolio() {
       {/* CONTACT */}
       <section id="contact" className="max-w-6xl mx-auto px-4 pb-16">
         <SectionTitle>Contact</SectionTitle>
-        <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg p-6 text-white text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg p-6 text-white text-center hover:bg-white/30 transition"
+        >
           <p className="text-lg mb-3">Let’s build something together 🚀</p>
           <a
             href={`mailto:${PROFILE.email}`}
-            className="px-4 py-2 rounded-full bg-white/20 border border-white/30 hover:bg-white/30"
+            className="px-4 py-2 rounded-full bg-white/20 border border-white/30 hover:bg-white/30 transition"
           >
             Email Me
           </a>
-        </div>
+        </motion.div>
       </section>
 
       {/* FOOTER */}
@@ -391,11 +450,12 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-4 py-6 text-sm text-white/70 flex flex-col md:flex-row items-center justify-between gap-3">
           <div>© {new Date().getFullYear()} {PROFILE.name}. All rights reserved.</div>
           <div className="flex items-center gap-3">
-            <a href={PROFILE.links.github} target="_blank" rel="noreferrer">GitHub</a>
-            <a href={PROFILE.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href={PROFILE.links.itch} target="_blank" rel="noreferrer">itch.io</a>
+            <a href={PROFILE.links.github} target="_blank" rel="noreferrer" className="hover:text-white transition">GitHub</a>
+            <a href={PROFILE.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-white transition">LinkedIn</a>
+            <a href={PROFILE.links.itch} target="_blank" rel="noreferrer" className="hover:text-white transition">itch.io</a>
           </div>
         </div>
       </footer>
     </div>
   );
+}
