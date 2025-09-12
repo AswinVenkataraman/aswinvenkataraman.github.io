@@ -23,7 +23,9 @@ const PROFILE = {
 const PROJECTS = [
   {
     title: "WCB2",
-    year: 2023,
+    year: 2021,
+	type: "Profesional Project",
+	company: "Creative Monkey Games & Technologies Pvt. Ltd.",
     blurb:	
 	"Step into the world of World Cricket Battle 2 (WCB2), the most advanced next-gen 3D cricket game on Google Play Store, delivering an unmatched real cricket simulation experience. Perfect for all cricket enthusiasts, WCB2 offers a wide array of World Cricket Championships, including the most authentic My Career Mode, thrilling T20 Cricket Leagues, and intense Real-Time Cricket Batting Multiplayer!",
     role: "Gameplay, Multiplayer Systems, Animations",
@@ -34,7 +36,9 @@ const PROJECTS = [
   },
   {
     title: "Haydos 380",
-    year: 2023,
+    year: 2022,
+	type: "Profesional Project",
+	company: "Creative Monkey Games & Technologies Pvt. Ltd.",
     blurb:	
 	"Haydos 380 offers a highly realistic cricket game with detailed graphics and smooth animations. The game’s mechanics replicate real-life cricket scenarios, providing an immersive experience for players. With multiple game modes — such as Quick Match, Tournament, and Challenge Mode — the game offers plenty of variety to keep players engaged.",
     role: "Gameplay, Multiplayer Systems, Animations",
@@ -46,6 +50,8 @@ const PROJECTS = [
    {
     title: "Cricket Gangsta",
     year: 2023,
+	type: "Profesional Project",
+	company: "Creative Monkey Games & Technologies Pvt. Ltd.",
     blurb:	
 	"Experience Thrilling 2-Over Cricket Matches With Friends and Players Worldwide! Dive into a rapid-fire, adrenaline-pumping cricket experience that fits in the palm of your hand. Whether you're teaming up with buddies or taking on global competitors, you're only minutes away from unleashing your inner Cricket Gangsta. Get ready to embark on a thrilling Cricket journey today!",
     role: "Gameplay, Multiplayer Systems, Animations",
@@ -56,7 +62,9 @@ const PROJECTS = [
   },
   {
     title: "Digital Twin",
-    year: 2023,
+    year: 2024,
+	type: "Profesional Project",
+	company: "L&T Technologies Services",
     blurb:
       "A cutting-edge Digital Twin VR Cockpit concept that was showcased at CES 2024/2025.Built on Amazon Web Services (AWS), this Digital Twin provides a virtual replica of the entire car electric-electronic architecture - from information clusters to infotainment, and from Zone Control Units to body. Digital Twin streamlines software development and prototype creation, cutting costs by 70% and accelerating timelines.",
     role: "AR Systems, UX, Optimization",
@@ -68,7 +76,9 @@ const PROJECTS = [
   },
   {
     title: "Ludo Habibi",
-    year: 2025,
+    year: 2022,
+	type: "Profesional Project",
+	company: "Creative Monkey Games & Technologies Pvt. Ltd.",
     blurb:
       "Ludo Habibi is a very entertaining game and a great digital adaptation of one of the world's most popular board games. Ludo Habibi is a strategy board game for 2 to 4 players and can be played between friends and family. The goal is simple, each player has to race their four tokens from start to finish (home) according to the rolls of a single dice. ",
     role: "VR Systems, HMI Integration, Leadership",
@@ -80,7 +90,9 @@ const PROJECTS = [
   },
    {
     title: "Skill Premier League (SPL)",
-    year: 2025,
+    year: 2020,
+	type: "Profesional Project",
+    company: "Digient Technologies Pvt. Ltd.",
     blurb:
       " Skill Premier League is a Platform for Mobile gamers. Target on Skill based gaming genres like pool, shooter, arcades & more. There are various tournaments conducted in the app which are Skill based. Players can participate in this tournament via Free entry and SPL coins as per the tournament structure. Players can participate in the games multiple times throughout the tournament time.",
     role: "VR Systems, HMI Integration, Leadership",
@@ -91,7 +103,9 @@ const PROJECTS = [
   },
    {
     title: "Street Chaser",
-    year: 2025,
+    year: 2017,
+	type: "Profesional Project",
+	company: "iGold Technologies Private Limited",
     blurb:
       " Your companion was robbed by a gang, You can help by running behind the robber to catch them. Run as fast as you can, Dodge the obstacles coming your way.Chase thief without loosing, Catch them by throwing bottles and kicking balls hitting them! Avoid obstacles by jumping and sliding while running through the streets",
     role: "VR Systems, HMI Integration, Leadership",
@@ -102,7 +116,9 @@ const PROJECTS = [
   },
    {
     title: "Unblock Ball",
-    year: 2025,
+    year: 2017,
+	type: "Profesional Project",
+    company: "iGold Technologies Private Limited",
     blurb:
       " Pocket bouncing balls by moving blocks in this challenging, addictive & brand new Unblock game. 1000s of interesting puzzles in six different game modes each having hundreds of puzzles. Ultimate mind game to pass your boring moments and it also refreshes your thinking. Pocket the colored balls in the same color holes in given moves, avoid dropping them anywhere else",
     role: "VR Systems, HMI Integration, Leadership",
@@ -114,6 +130,8 @@ const PROJECTS = [
   {
     title: "HMI - SmartCockpit",
     year: 2025,
+	type: "Profesional Project",
+	company: "L&T Technologies Services",
     blurb:
       " Powered by AI and machine learning, this platform offers a new level of personalization and connectivity, integrating seamlessly with users’ digital lives. It features simplified menus and AI-enabled experiences for navigation, media, climate, lighting, and productivity. The system would use AR to overlay information, such as the turn by turn navigation infomation",
     role: "VR Systems, HMI Integration, Leadership",
@@ -121,6 +139,48 @@ const PROJECTS = [
     media: "https://moparinsiders.com/wp-content/uploads/2023/09/Over-The-Air-OTA-Updates-and-WiFi-with-the-Uconnect-5-system.-Stellantis.-1-780x470.jpeg",
     tags: ["HMI", "Automotive", "AR"],
 	link: "https://www.stellantis.com/en/innovation/intelligent-vehicles-software",
+
+  },
+  {
+    title: "MeshGeneration",
+    year: 2021,
+	type: "Personal Project",
+	company: "Personal",
+    blurb:
+      " Created mesh dynamically in unity. The mesh includes both floor and walls along with textures. This allows you to map points first and then when all the points are plotted, the wall and the floor meshes are generated. This system could be developed further for games that involves creating buildings dynamically.",
+    role: "VR Systems, HMI Integration, Leadership",
+    tech: ["Unity", "C#"],
+    media: "https://camo.githubusercontent.com/e761aacf8f802aaabd606fd5a63a0e4edf7bd6c0591d2f0255523cb471f7ba1d/68747470733a2f2f692e696d6775722e636f6d2f4266464a5a49732e676966",
+    tags: ["Personal"],
+	link: "https://github.com/AswinVenkataraman/MeshGeneration",
+
+  },
+   {
+    title: "InventorySystem",
+    year: 2021,
+	type: "Personal Project",
+	company: "Personal",
+    blurb:
+      " A flexible inventory system made with Zenject DI that supports merging stackable items, swapping different ones, transferring items into the player’s inventory, and dropping them back into the world. This system balances functionality and simplicity, making it suitable for RPGs, survival games, or any project that requires efficient item management.",
+    role: "VR Systems, HMI Integration, Leadership",
+    tech: ["Unity", "C#"],
+    media: "https://camo.githubusercontent.com/a89c7375346fb2087ab3f69d3c506c2a46be45f7b3d04b656cb1ba0160b37ef0/68747470733a2f2f692e696d6775722e636f6d2f487a4e76644a362e676966",
+    tags: ["Personal"],
+	link: "https://github.com/AswinVenkataraman/MeshGeneration",
+
+  },
+  {
+    title: "AStarAlgorithm",
+    year: 2021,
+	type: "Personal Project",
+	company: "Personal",
+    blurb:
+      " Basic AStar Algorithm Made In Unity. It has simple obstacle avoidance algorithm and find path from start point to the end point. The default move cost between cells are 10 and 14 for non diagonals and diagonals respectively. The algorithm is slowed down intentionally to view its search progress.",
+    role: "VR Systems, HMI Integration, Leadership",
+    tech: ["Unity", "C#"],
+    media: "https://camo.githubusercontent.com/cef9447dc8c605b526c696ed931e2d98dc0c297dbfb576ec3e8e84ceca519c13/68747470733a2f2f692e696d6775722e636f6d2f4b7a326c6e786c2e676966",
+    tags: ["Personal"],
+	link: "https://github.com/AswinVenkataraman/AStarAlgorithm/",
 
   },
 ];
@@ -190,7 +250,7 @@ const EXPERIENCE = [
   },
 ];
 
-const TAGS = ["All", "AR", "VR", "Multiplayer", "Mobile", "Automotive"];
+const TAGS = ["All", "AR", "VR", "Multiplayer", "Mobile", "Automotive", "Personal"];
 
 // ---------- UI Components ----------
 function SectionTitle({ children }) {
@@ -218,17 +278,17 @@ function ProjectCard({ p }) {
     >
       <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg overflow-hidden hover:shadow-xl hover:border-white/50 transition">
         <a href={p.link} target="_blank">
-		 <div class="overlay-text">
-    Your Text Here
-  </div>
+	
 		{p.media && <img src={p.media} alt={p.title} className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"/>}
 		</a>
         <div className="p-4 text-white">
           <div className="flex justify-between items-center">
-            <h3 className="text-lg font-semibold drop-shadow">{p.title}</h3>
+            <h3 className="text-lg font-semibold drop-shadow">{p.title}</h3> 
             <span className="text-xs bg-white/30 px-2 py-1 rounded-full">{p.year}</span>
           </div>
-          <p className="text-sm text-white/80 mt-1 line-clamp-3">{p.blurb}</p>
+		  		  <p className="text-xs text-white/80 mt-1 line-clamp-0"><i>({p.company})</i></p>
+
+          <p className="text-sm text-white/80 mt-1 line-clamp-10">{p.blurb}</p>
           <div className="flex flex-wrap gap-2 mt-2">
             {(p.tech || []).map((t) => (
               <span key={t} className="text-xs bg-white/20 px-2 py-1 rounded-full border border-white/40">
