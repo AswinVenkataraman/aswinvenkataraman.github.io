@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.overlay-text {
+  position: relative;
+  top: 20px;        /* distance from top */
+  left: 20px;       /* distance from left */
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent bg */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  z-index: 10; /* ensures it's on top */
+}

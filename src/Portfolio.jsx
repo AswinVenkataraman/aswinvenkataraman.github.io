@@ -218,6 +218,9 @@ function ProjectCard({ p }) {
     >
       <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg overflow-hidden hover:shadow-xl hover:border-white/50 transition">
         <a href={p.link} target="_blank">
+		 <div class="overlay-text">
+    Your Text Here
+  </div>
 		{p.media && <img src={p.media} alt={p.title} className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"/>}
 		</a>
         <div className="p-4 text-white">
@@ -426,7 +429,7 @@ export default function Portfolio() {
           <p className="text-sm text-white/80">No projects found.</p>
         )}
       </section>
-
+	  
       {/* SKILLS */}
       <section id="skills" className="max-w-6xl mx-auto px-4 pb-16">
         <SectionTitle>Skills</SectionTitle>
